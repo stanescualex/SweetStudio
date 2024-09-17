@@ -38,7 +38,7 @@ app.listen(PORT, () => {
 
 });
 
-app.post("/api", (req, res) => {
+app.post("/api", async (req, res) => {
     const objectMail = {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
@@ -46,8 +46,20 @@ app.post("/api", (req, res) => {
         phone: req.body.phone,
         details: req.body.details
       }
-    sendMail(objectMail);
-    res.send("Welcome to our server")
+      let result = {
+      };
+      try {
+        resultMail = await sendMail(objectMail);
+        result.isSucess = true;
+        result.data = resultMail;
+     } catch (error) {
+      result.isSucess = false;
+      result.Error = 'Issue to send the mail check logs';
+     }finally{
+      console.log(result)
+      res.send(result)
+     }
+
   });
   
 

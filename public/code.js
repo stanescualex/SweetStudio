@@ -1,4 +1,5 @@
 
+$('#myPopup').addClass("hidden");
 function reveal() {
     var reveals = document.querySelectorAll(".reveal");
   
@@ -26,10 +27,21 @@ function reveal() {
     }
 
     $.post("/api", objectMail, (data, status) => {
-      console.log(data);
+      if(!data.isSucess){
+        $("#textPopUp").text("Mail-ul nu a putut fii trimis incercati sa contactati prin datele din sectiunea de contact")
+        $("#myPopup").removeClass("hidden")
+      }else{
+        $("#myPopup").removeClass("hidden")
+      }
     });
+    
+
 
   })
+
+  let hidePopUp = function(){
+    $('#myPopup').addClass("hidden");
+  }
 
   $('#loadMore').click(function(){
     $('#galeryMore').removeClass("hidden");
