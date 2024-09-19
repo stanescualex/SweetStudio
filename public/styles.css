@@ -25,6 +25,12 @@ h1{
     align-items: center;
 }
 
+article p{
+	color:black;
+	text-align: center;
+	size: 5px;
+}
+
 .popUpMessage{
 		opacity: 0.8;
 		width: 100px;
@@ -195,6 +201,15 @@ h1{
 	.img-custom {
 		width: 373px;
 		height: 280px;
+	}
+  }
+  @media screen and (max-width: 420px) {
+	.img-custom {
+		width: 320px;
+		height: 240px;
+	}
+	.contact-p{
+		font-size: 1.5em;
 	}
   }
 
@@ -528,6 +543,22 @@ footer {
 		-webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
+	}
+  }
+
+  @media screen and (max-width: 400px) {
+	.benefits {
+		margin-left:15px;
+		height: 210px;
+		width: 80%;
+	}
+	.benefits:hover {
+		margin-left:15px;
+		height: 210px;
+		-webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+	width: 80%;
 	}
   }
 
