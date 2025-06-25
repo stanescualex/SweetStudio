@@ -9,7 +9,7 @@ const path = require('path');
 const app = express();
 const bodyParser = require('body-parser')
 const cors = require('cors');
-const { sendMail } = require('./sendMail');
+//const { sendMail } = require('./sendMail');
 
 
 
@@ -39,7 +39,7 @@ app.listen(PORT, () => {
 });
 
 app.post("/api", async (req, res) => {
-    const objectMail = {
+    /*const objectMail = {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         mail: req.body.mail,
@@ -58,7 +58,7 @@ app.post("/api", async (req, res) => {
      }finally{
       console.log(result)
       res.send(result)
-     }
+     }*/
 
   });
   
